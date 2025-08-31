@@ -1,69 +1,137 @@
-# React + TypeScript + Vite
+🌊 Why Surfer Weather?
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Because checking wind, waves, and weather shouldn’t be complicated —
+everything surfers need, at a glance. 🏄‍♀️
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🌍 **Search**: Autocomplete surf spots across **Germany** (via Open-Meteo Geocoding API).
+- 🌊 **Marine Forecast**: Wave height, wave period, swell, and wind-wave data.
+- 🌦️ **Daily Weather**: Temperature, rain, wind speed/gusts, UV index, and weather icons.
+- 🎚️ **Surf Score**: 0–100 score calculated from **wave height**, **period**, and **wind speed**.
+- 🏆 **Best Day Badge**: Highlights the **best surf day** when the score ≥ **55**.
+- 📊 **24-Hour Charts**: Interactive wind & wave previews via **Recharts**.
+- 🌗 **Dark Mode**: Respects your system preference automatically.
+- ⚡ **Fast + Modern**: Powered by **Vite** for instant builds and blazing-fast HMR.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+| Category        | Tech                                                  |
+| -------------- | ----------------------------------------------------- |
+| **Frontend**   | [React 18](https://react.dev/), [TypeScript](https://www.typescriptlang.org/) |
+| **Styling**    | [TailwindCSS](https://tailwindcss.com/)               |
+| **Charts**     | [Recharts](https://recharts.org/)                     |
+| **Icons**      | [Lucide Icons](https://lucide.dev/)                   |
+| **API**        | [Open-Meteo](https://open-meteo.com/) (Weather + Marine + Geocoding) |
+| **Bundler**    | [Vite](https://vitejs.dev/)                           |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 📦 Installation
+
+Clone the repo and install dependencies:
+
+```bash
+git clone https://github.com/<your-username>/surfer-weather.git
+cd surfer-weather
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🏃‍♂️ Running the Project
+Start the development server:
+```bash
+npm run dev
 ```
+Then open http://localhost:5173 in your browser.
+
+## 📦 Build for Production
+
+```bash
+npm run build
+```
+
+## 🔗 API Endpoints
+Geocoding (Germany-only)
+```bash
+GET https://geocoding-api.open-meteo.com/v1/search?name=<query>&language=de&countryCode=DE&count=8
+```
+Weather Forecast
+```bash
+GET https://api.open-meteo.com/v1/forecast
+```
+
+Daily variables:
+
+- Weather code, temperature max/min, UV index, rain, wind speed/gusts.
+
+Hourly variables:
+
+- wind_speed_10m, wind_gusts_10m.
+
+Marine Forecast
+```bash
+GET https://marine-api.open-meteo.com/v1/marine
+```
+
+Daily variables:
+
+- Wave height, period, swell, wind-wave data.
+
+- cell_selection=sea ensures coastal accuracy.
+
+Hourly variables:
+
+- wave_height, wave_period.
+
+Note: Open-Meteo is free and doesn’t require an API key.
+
+## 🎚️ Surf Score Logic
+```bash
+score = waveHeight * 30 + period * 2 - wind * 0.8;
+```
+- ✅ Higher waves → better
+- ✅ Longer periods → better
+- ❌ Strong winds → worse
+Best Day Badge appears only when the top score ≥ 55.
+
+## 🚀 Roadmap
+ ⭐ Save favorite surf spots
+ 🧭 Offshore / Onshore wind indicator
+ 📲 PWA support (installable app)
+ 🌙 Manual dark mode toggle
+ 🔔 “Best day” notification
+ 🤝 Contributing
+
+## 🤝Contributions 
+Contributions are welcome!
+1. Fork the repo
+2. Create your feature branch
+```bash
+git checkout -b feature/my-feature
+```
+
+Commit your changes
+```bash
+git commit -m "Add my feature"
+```
+
+Push
+```bash
+git push origin feature/my-feature
+```
+Open a pull request 🎉
+
+## 🙌 Acknowledgements
+- [Open-Meteo API](https://open-meteo.com/)
+- [Lucide Icons](https://lucide.dev/)
+- [Recharts](https://recharts.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+
+##👩‍💻 Author
+
+Your Name
+- [GitHub](https://github.com/ishitaa9)
+- [LinkedIn](https://www.linkedin.com/in/ishita-gupta-b887241a3/)
