@@ -132,6 +132,6 @@ Open a pull request 🎉
 
 ##👩‍💻 Author
 
-Your Name
+Ishita Gupta
 - [GitHub](https://github.com/ishitaa9)
 - [LinkedIn](https://www.linkedin.com/in/ishita-gupta-b887241a3/)
