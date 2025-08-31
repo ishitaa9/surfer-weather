@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="./screenshots/banner.png" alt="Surfer Weather" width="100%" />
-</p>
-
 <h1 align="center">🌊 Surfer Weather</h1>
 <p align="center">
   A modern weather dashboard for <b>surfers in Germany</b> 🏄‍♂️<br/>
