@@ -1,3 +1,28 @@
+<p align="center">
+  <img src="./screenshots/banner.png" alt="Surfer Weather" width="100%" />
+</p>
+
+<h1 align="center">🌊 Surfer Weather</h1>
+<p align="center">
+  A modern weather dashboard for <b>surfers in Germany</b> 🏄‍♂️<br/>
+  Built with <b>React</b>, <b>TypeScript</b>, <b>TailwindCSS</b>, and <b>Open-Meteo API</b>.
+</p>
+
+<p align="center">
+  <a href="https://react.dev/">React</a> •
+  <a href="https://www.typescriptlang.org/">TypeScript</a> •
+  <a href="https://tailwindcss.com/">TailwindCSS</a> •
+  <a href="https://recharts.org/">Recharts</a> •
+  <a href="https://open-meteo.com/">Open-Meteo API</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/React-18-blue?logo=react" alt="React Badge"/>
+  <img src="https://img.shields.io/badge/TypeScript-5-blue?logo=typescript" alt="TypeScript Badge"/>
+  <img src="https://img.shields.io/badge/TailwindCSS-3-38B2AC?logo=tailwind-css" alt="Tailwind Badge"/>
+  <img src="https://img.shields.io/badge/License-MIT-green" alt="MIT License"/>
+</p>
+
 🌊 Why Surfer Weather?
 
 Because checking wind, waves, and weather shouldn’t be complicated —
