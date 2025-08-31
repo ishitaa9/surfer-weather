@@ -3,8 +3,6 @@
   A modern weather dashboard for <b>surfers in Germany</b> 🏄‍♂️<br/>
   Built with <b>React</b>, <b>TypeScript</b>, <b>TailwindCSS</b>, and <b>Open-Meteo API</b>.
 </p>
-<p>Because checking wind, waves, and weather shouldn’t be complicated —
-everything surfers need, at a glance. 🏄‍♀️</p>
 
 <p align="center">
   <a href="https://react.dev/">React</a> •
@@ -21,6 +19,10 @@ everything surfers need, at a glance. 🏄‍♀️</p>
   <img src="https://img.shields.io/badge/License-MIT-green" alt="MIT License"/>
 </p>
 
+🌊 Why Surfer Weather?
+
+Because checking wind, waves, and weather shouldn’t be complicated —
+everything surfers need, at a glance. 🏄‍♀️
 
 ## 🚀 Features
 
